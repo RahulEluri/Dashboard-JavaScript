@@ -1,0 +1,132 @@
+body{
+    min-height:100vh;
+    margin:0px;
+    padding:0px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: 
+    "side header"
+    "side main";
+}
+
+.header{
+    background: #191919;
+    /* border-radius:0 0 3px 3px ; */
+
+    grid-area: header;
+}
+
+.sidebar{
+    /* background-color: #4D243D ; */
+    min-height: 100vh;
+    background: linear-gradient(-135deg,#191919,#4e085f);
+
+    
+    grid-area: side;
+}
+
+.main{
+    background-color: whitesmoke ;
+    padding: 20px;
+    grid-area: main;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px;
+    grid-template-areas: 
+    "c1 c2 c3"
+    "c4 c4 c5"
+    "c4 c4 c6";
+}
+
+/* .btn:active{
+    border: #fff !important;
+    outline:none  !important;
+} */
+
+.sidebar .btn{
+    margin:20px 0 0 30px;
+    width:fit-content;
+    border: aquamarine !important;
+}
+
+.card{
+    background-color: #ede6ef;
+    border-radius: 3px;
+    border: none;
+}
+
+
+.card:nth-child(1){
+    grid-area: c1;
+}
+
+.card:nth-child(2){
+    grid-area: c2;
+}
+
+.card:nth-child(3){
+    grid-area: c3;
+}
+
+.card:nth-child(4){
+    grid-area: c4;
+}
+
+.card:nth-child(5){
+    grid-area: c5;
+}
+
+.card:nth-child(6){
+    grid-area: c6;
+}
+
+div.hide{
+    display:none;
+}
+
+.main .btn{
+    border-radius: 20px !important;
+}
+
+input{
+    margin: 20px 0;
+    border-radius: 13px !important;
+}
+@media(max-width:925px){
+    body{
+        grid-template-columns: 150px 1fr;
+        grid-template-rows: 60px 1fr;
+        
+    }
+    .main{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 250px);
+        grid-template-areas: initial;
+        
+    }
+    .sidebar .btn{
+        margin:initial;
+        margin:10px 0px
+    }
+    .card{
+        grid-area: initial !important;
+    }
+}
+
+@media(max-width:420px){
+    .main{
+        
+        /* display: none; */
+        grid-template-columns: 1fr;
+        /* grid-template-rows: 60px 1fr; */
+        grid-template-rows: repeat(6, 350px);
+        grid-template-areas: initial;
+    }
+
+    section{
+        display: none;
+    }
+}

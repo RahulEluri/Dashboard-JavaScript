@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <!-- header -->
+        <header class="header d-flex sticky" >
+           
+            <p class="h4 p-3 mx-auto text-white">Dashboard</p>
+
+        </header>
+
+        <!-- sidebar -->
+        <section class="sidebar sticky-right">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class=" gap-2 mt-4 me-auto" id="side">
+
+                    <div class="container3 text-white ">
+                      
+                      <h3 style="border: 1px dashed whitesmoke; border-left: 0px; border-right: 0px; padding:15px 10px 5px 20px; margin-top: 60px;"><pre>Please Give Input</pre></h3> 
+                      
+                    </div>
+                    <div class="container1 hide">
+                      <h3 class="text-white  mb-3 mx-4" style="margin-top:60px ;"><pre><u>Array Methods</u></pre></h3>
+                        <button   onclick="map_fn()"          class="btn btn-outline-light  btn-sm" type="button"> Map (Mutliply by 2)</button>
+                        <button   onclick="filter_fn()"       class="btn btn-outline-light  btn-sm" type="button">Filter (Greater than 3)</button>
+                        <button   onclick="concat_fn()"       class="btn btn-outline-light  btn-sm" type="button">Concat (Combining arrays)</button>
+
+                    </div>
+                    <div class="container2 hide">
+                      <h3 class="text-white mb-3 mx-4" style="margin-top:60px ;"><pre><u>String Methods</u></pre></h3>
+                        <button   onclick="charAt_fn()"       class="btn btn-outline-light  btn-sm" type="button"> charAt (character at 4)</button>
+                        <button   onclick= "split_fn()"       class="btn btn-outline-light  btn-sm" type="button">Split (Greater than 3)</button>
+                        <button   onclick="lowercase_fn()"    class="btn btn-outline-light  btn-sm" type="button">Lowercase</button>
+                        <button   onclick="uppercase_fn()"    class="btn btn-outline-light  btn-sm" type="button">Uppercase</button>
+                        <button   onclick="indexOf_fn()"      class="btn btn-outline-light  btn-sm" type="button">indexOf (finds index of a)</button>
+                        <button   onclick="lastIndexOf_fn()"  class="btn btn-outline-light  btn-sm" type="button">lastIndexOf (finds last index of a)</button>
+                        <button   onclick="slice_fn()"        class="btn btn-outline-light  btn-sm" type="button">slice (removing char=>index 2 to 5)</button>
+                        
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+        </section>
+
+        <!-- main -->
+        <main class="main">
+          <!-- string -->
+            <div class="card">
+              <div class="container">
+                <div class="row">
+                  <div class="col d-grid">
+                    <p class="h4 me-auto my-3">String</p>
+                    <label for="stringy"><i>Enter the String</i></label>
+                    <input class="form-control form-control" type="text" name="input-string-form" id="stringy" placeholder="Enter text here...">
+                    <button type="submit" onclick="pushString()" id="string-button" class="btn btn btn-outline-dark mb-1 p-1">Show</button>
+                    <!-- <button type="submit" onclick="pushString()" id="string-button2" class="btn btn btn-outline-dark mt-1 p-1">Show-2</button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- array -->
+            <div class="card">
+              <div class="container">
+                <div class="row">
+                  <div class="col d-grid">
+                    <p class="h4 me-auto my-3">Array</p>
+                      <label for="arrayays"><i>Enter the Array Elements</i></label>
+                      <input class="form-control form-control" type="text" name="input-array-form" id="numb" placeholder="Enter text here..." required>
+                      <button type="button" onclick="pushToArray1()" id="array-button1" class="btn btn btn-outline-dark mb-1 p-1">Push-1</button>
+                      <button type="button" onclick="pushToArray2()" id="array-button2" class="btn btn btn-outline-dark mt-1 p-1">Push-2</button>
+                      <!-- <button type="button" onclick="showArray()" class="btn btn-sm btn-primary mt-2">Show Array</button> -->
+                      
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- objects -->
+            <div class="card">
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <p class="h4 me-auto my-3">Objects</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque minima ea et ipsam magnam, animi sequi perferendis nisi officiis labore cumque ex eveniet consequuntur distinctio odit repellat ad at nostrum?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- display -->
+            <div class="card">
+              <div class="container">
+                <div class="row">
+                  <div class="col mt-2">
+                    <span>Array/String 1 :</span><p id="demo1" class="text-center justify-content-center h3 my-5"></p> 
+
+                    <span>Array/String 2 :</span><p id="demo2" class="text-center justify-content-center h3 my-5"></p>
+
+                    <span>Results :</span><p id="demo3" class="text-center justify-content-center h3 mt-5"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- date -->
+            <div class="card">
+              <div class="container">
+                <div class="row">
+                  <div class="col d-grid">
+                    <p class="h4 me-auto mt-3 ">Date</p>
+                    <strong>Current Date and Time:</strong> <br><span id="txt"></span><br>
+                    <button type="submit" id="reset-btn" class="btn btn-lg btn-outline-dark mt-2">Update</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- kali undi epudu ki -->
+            <div class="card">
+              <div class="container">
+                <div class="row">
+                  <div class="col d-grid">
+                    <p class="h4 mx-auto mt-5 ">Reset to Initial</p>
+                        <button class="btn btn-lg  btn-outline-danger mt-4 mx-1"  onclick="reset()" id="Reset-All" type="button">Reset</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          </div>
+        </main>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+</body>
+</html>
