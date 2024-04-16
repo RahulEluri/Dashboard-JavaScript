@@ -75,7 +75,7 @@ const pushString=()=>{
         //indexOf method
             const indexOf_fn=()=>{
                 string2 = string1.indexOf("a");
-                document.getElementById("demo3").innerHTML = string2+1;
+                 document.getElementById("demo3").innerHTML = string2+1;
             }
 
         //lastIndexOf method
@@ -107,13 +107,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     toggleSwitch.addEventListener('change', function() {
       if (this.checked) {
-        // Change input type to number when switch is checked
         inputField.type = 'number';
-        //let x = document.getElementById("numb").valueAsNumber;
     } else {
-        // Change input type to text when switch is unchecked
         inputField.type = 'text';
-        //let x = document.getElementById("numb").value;
       }
     });
   });

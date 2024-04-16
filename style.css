@@ -18,7 +18,7 @@ body{
 .sidebar{
     min-height: 100vh;
     background: linear-gradient(-135deg,#191919,#4e085f);
-
+    position: sticky;
     grid-area: side;
 }
 
@@ -95,7 +95,7 @@ input{
     }
     .main{
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(auto-fill, 250px);
+        grid-template-rows: repeat(6, 250px);
         grid-template-areas: initial;
         
     }
@@ -106,13 +106,24 @@ input{
     .card{
         grid-area: initial !important;
     }
+
+    .sidebar{
+        min-height: 100vh;
+    }
+
+
+    
 }
 
 @media(max-width:420px){
     .main{
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(6, 350px);
+        grid-template-rows: 200px 250px 350px 450px 300px 200px;
         grid-template-areas: initial;
+    }
+
+    .sidebar{
+        min-height: 100vh;
     }
 
 }  
